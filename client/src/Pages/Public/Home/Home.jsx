@@ -2,11 +2,8 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 
-//Components
-import Nav from '../../Components/Nav/Nav'
-
 //Assets
-import homeBanner from '../../assets/HomeBanner.jpg'
+import homeBanner from '../../../assets/HomeBanner.jpg'
 
 //Style
 import './Home.css'
@@ -18,7 +15,6 @@ function Home() {
       <Helmet>
         <title>KasaBook | Accueil</title>
       </Helmet>
-      <Nav />
       <b className="Title">KasaBook</b>
       <div className="homeBanner">
         <p>Partagez vos lieux favoris !</p>

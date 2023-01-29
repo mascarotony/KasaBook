@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 //Assets
-import Logo from '../../assets/Logo.png'
+import Logo from '../../../assets/Logo.png'
 
 //Style
 import './Nav.css'
