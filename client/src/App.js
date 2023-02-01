@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 //Router
 import PublicRouter from './Pages/Public/PublicRouter/PublicRouter'
-import AdminRouter from './Pages/Admin/AdminRouter/AdminRouter'
+import CRouter from './Pages/Contributor/CRouter/CRouter'
 
 //Function
 function App() {
@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/*" element={<PublicRouter />} />
-        <Route path="/admin/*" element={<AdminRouter />} />
+        <Route path="/contributor/*" element={<CRouter />} />
       </Routes>
     </BrowserRouter>
   )

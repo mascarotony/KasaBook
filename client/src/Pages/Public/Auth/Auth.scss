@@ -8,20 +8,11 @@
     }
 }
 
-.AboutPage {
-    display: flex;
-    flex-direction: column;
+.AuthPage {
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 110px;
-    
-    .AboutTitle {
-        text-align: center;
-        font-size: 5rem;
-        color: #75AB39;
-        text-shadow: 2px 2px 2px #D9D9D9;
-        margin-top: 40px;
-    }
 }

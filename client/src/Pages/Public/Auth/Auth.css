@@ -1,0 +1,17 @@
+* {
+  font-family: "Montserrat";
+  background-color: #F6F6F6;
+  box-sizing: border-box;
+}
+* button {
+  padding: 0;
+}
+
+.AuthPage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 110px;
+}/*# sourceMappingURL=Auth.css.map */
