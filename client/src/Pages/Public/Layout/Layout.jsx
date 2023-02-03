@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 //Components
 import Nav from '../../../Components/Public/Nav/Nav'
+import Footer from '../../../Components/Public/Footer/Footer'
 
 //Style
 import './Layout.css'
@@ -15,6 +16,8 @@ function Layout() {
       <Nav />
 
       <Outlet />
+
+      <Footer />
     </div>
   )
 }

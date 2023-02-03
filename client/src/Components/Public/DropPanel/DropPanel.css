@@ -1,0 +1,66 @@
+.VectorBTN {
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropPanel {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: transparent;
+}
+
+.dropPanel-Block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #75AB39;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  max-width: 900px;
+  color: #F6F6F6;
+  border-radius: 10px;
+  padding: 10px 20px;
+  position: relative;
+  width: 90vw;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.Vector {
+  height: 30px;
+  width: 30px;
+  rotate: 180deg;
+  cursor: pointer;
+  background-color: #75AB39;
+}
+
+#PanelTitle {
+  color: white;
+  -webkit-margin-after: 0px;
+          margin-block-end: 0px;
+  -webkit-margin-before: 0px;
+          margin-block-start: 0px;
+  font-size: 1.8rem;
+  background-color: #75AB39;
+}
+
+.text {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  background-color: #eeeeee;
+  color: #75AB39;
+  font-size: 1.3rem;
+  padding: 0px 20px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  position: relative;
+  top: -35px;
+  width: 90vw;
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 1;
+  border-radius: 0 0 25px 25px;
+}/*# sourceMappingURL=DropPanel.css.map */
