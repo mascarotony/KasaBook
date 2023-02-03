@@ -12,11 +12,11 @@ import './DropPanel.css'
 function DropPanel(props) {
   const [display, setDisplay] = useState('none')
   const [isActive, setIsActive] = useState('')
-  const [rotate, setRotate] = useState('180deg')
+  const [rotate, setRotate] = useState('0deg')
 
   function inputDropPanel() {
     setIsActive(isActive === '' ? 'active' : '')
-    setRotate(rotate === '180deg' ? '0deg' : '180deg')
+    setRotate(rotate === '0deg' ? '180deg' : '0deg')
     setDisplay(display === 'block' ? 'none' : 'block')
   }
 

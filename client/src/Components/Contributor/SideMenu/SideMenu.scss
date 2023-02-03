@@ -1,5 +1,5 @@
 .SideMenu {
-    border: 2px solid #75AB39;
+    box-shadow: 0 2px 5px #75ab39;
     width: 100%;
     height: 50px;
     position: fixed;
@@ -11,6 +11,7 @@
         justify-content: center;
         list-style: none;
         padding: 0;
+        padding-top: 5px;
         gap: 2rem;
 
         li {
@@ -18,11 +19,16 @@
                 text-decoration: none;
                 color: #75AB39;
             }
+
+            .activated {
+                text-decoration: none;
+                color: #304e0d;
+            }
         }
     }
 }
 
-@media screen and(max-width:850px){
+@media screen and(max-width:768px){
     .SideMenu {
         top: 75px;
     }

@@ -11,13 +11,26 @@ function SideMenu() {
     <div className="SideMenu">
       <ul>
         <li>
-          <NavLink to="/contributor/dashboard">Profil</NavLink>
+          <NavLink
+            to="/contributor/dashboard"
+            className={({ isActive }) => (isActive ? 'activated' : '')}
+          >
+            Profil
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/contributor/logements/add">Ajouter un logement</NavLink>
+          <NavLink
+            to="/contributor/logements/add"
+            className={({ isActive }) => (isActive ? 'activated' : '')}
+          >
+            Ajouter un logement
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/contributor/logements/mylogement">
+          <NavLink
+            to="/contributor/logements/mylogement"
+            className={({ isActive }) => (isActive ? 'activated' : '')}
+          >
             Mes logements
           </NavLink>
         </li>

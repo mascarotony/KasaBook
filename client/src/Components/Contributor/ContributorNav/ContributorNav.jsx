@@ -30,17 +30,28 @@ function ContributorNav() {
       <b className="TitleKB">KasaBook</b>
       <ul className="NavList">
         <li className="NavItem Slide1">
-          <NavLink className="NavLink" to="/contributor/home" end>
+          <NavLink
+            className={({ isActive }) => (isActive ? 'activated' : 'NavLink')}
+            to="/contributor/home"
+            end
+          >
             Accueil
           </NavLink>
         </li>
         <li className="NavItem Slide2">
-          <NavLink className="NavLink" to="/contributor/logements">
+          <NavLink
+            className={({ isActive }) => (isActive ? 'activated' : 'NavLink')}
+            to="/contributor/logements"
+          >
             Logements
           </NavLink>
         </li>
         <li className="NavItem Slide3">
-          <NavLink className="NavLink" to="/contributor/about" end>
+          <NavLink
+            className={({ isActive }) => (isActive ? 'activated' : 'NavLink')}
+            to="/contributor/about"
+            end
+          >
             À Propos
           </NavLink>
         </li>

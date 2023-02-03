@@ -4,6 +4,10 @@ import { Outlet } from 'react-router-dom'
 
 //Components
 import { ContributorNav, SideMenu } from '../../../Components/Contributor/index'
+import Footer from '../../../Components/Public/Footer/Footer'
+
+//Style
+import './CLayout.css'
 
 //Function
 function CLayout() {
@@ -16,6 +20,7 @@ function CLayout() {
           <Outlet />
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
