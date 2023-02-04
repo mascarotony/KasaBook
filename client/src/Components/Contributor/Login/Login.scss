@@ -1,0 +1,53 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+
+    button {
+        padding: 10px 20px;
+        color: #75AB39;
+        font-size: 1.5rem;
+        text-decoration: none;
+        transition: 500ms;
+        border: 2px solid #75AB39;
+        margin: 0 auto;
+        background: transparent;
+        border-radius: 10px;
+
+        &:hover {
+            cursor: pointer;
+            color: #F6F6F6;
+            background: #75AB39;
+            box-shadow: 0 0 5px #75AB39, 0 0 50px #75AB39;
+        }
+    }
+}
+
+.InputBox {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 10%;
+    background: transparent;
+    
+    label {
+        background: transparent;
+        margin: 10px 0;
+    }
+
+    input {
+        font-size: 1.2rem;
+            color: #252525;
+            border: none;
+            border-bottom: 2px solid #75AB39;
+            border-left: 2px solid #75AB39;
+            border-radius: 0 0 0 10px ;
+            outline: none;
+            padding: 5px;
+            background: transparent;
+    }
+}

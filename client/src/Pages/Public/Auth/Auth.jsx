@@ -2,7 +2,7 @@
 import React from 'react'
 
 //Components
-import SignUp from '../../../Components/Contributor/SignUp/SignUp'
+import { SignUp, Login } from '../../../Components/Contributor/index'
 
 //Assets
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,17 +13,24 @@ import './Auth.css'
 
 //Function
 function Auth() {
-  return (
+  return ( 
     <div className="AuthPage">
       <div className="LoginBloc">
         <b className="LogTitle">Connexion</b>
+        <Login />
+        <p>
+          Pas encore inscris ?{' '}
+          <button>
+            Lancez-vous !<FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </p>
       </div>
       <div className="SignUpBloc">
         <b className="SUTitle">Inscription</b>
         <SignUp />
         <p>
           Vous êtes déjà inscrit ?{' '}
-          <button className="BackLogin">
+          <button>
             Connectez-vous ! <FontAwesomeIcon icon={faChevronRight} />
           </button>
         </p>

@@ -33,6 +33,7 @@
   width: 30px;
   cursor: pointer;
   background-color: #75AB39;
+  transition: 300ms ease-in;
 }
 
 #PanelTitle {
