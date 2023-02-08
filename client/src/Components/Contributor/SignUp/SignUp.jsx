@@ -7,41 +7,41 @@ import './SignUp.css'
 //Function
 function SignUp() {
   return (
-    <form name="SignUp" method="post" onSubmit="submit" className="SignUpForm">
+    <form name="SignUp" method="post" className="SignUpForm">
       <input type="hidden" name="form-name" value="contact" />
 
       <div className="InputBox">
-        <label for="firstname">Prénom</label>
+        <label htmlFor="firstname">Prénom</label>
         <input
           type="text"
           name="firstname"
           aria-label="prénom"
-          required="true"
+          required={true}
         />
       </div>
 
       <div className="InputBox">
-        <label for="lastname">Nom de famille</label>
+        <label htmlFor="lastname">Nom de famille</label>
         <input
           type="text"
           name="lastname"
           aria-label="Nom de famille"
-          required="true"
+          required={true}
         />
       </div>
 
       <div className="InputBox">
-        <label for="email">Email</label>
-        <input type="email" name="email" aria-label="email" required="true" />
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" aria-label="email" required={true} />
       </div>
 
       <div className="InputBox">
-        <label for="password">Mot de Passe</label>
+        <label htmlFor="password">Mot de Passe</label>
         <input
           type="password"
           name="password"
           aria-label="mot de passe"
-          required="true"
+          required={true}
         />
       </div>
 
