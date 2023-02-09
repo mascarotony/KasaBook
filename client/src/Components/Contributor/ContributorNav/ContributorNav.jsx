@@ -5,6 +5,9 @@ import { useNavigate, NavLink } from 'react-router-dom'
 //Assets
 import Logo from '../../../assets/Logo.png'
 
+//Service
+import { accountService } from '../../../_Services/account.service'
+
 //Style
 import './ContributorNav.css'
 
@@ -13,6 +16,7 @@ function ContributorNav() {
   let navigate = useNavigate()
 
   const logout = () => {
+    accountService.logout()
     navigate('/')
   }
 
@@ -33,7 +37,6 @@ function ContributorNav() {
           <NavLink
             className={({ isActive }) => (isActive ? 'activated' : 'NavLink')}
             to="/contributor/home"
-            end
           >
             Accueil
           </NavLink>
@@ -50,13 +53,12 @@ function ContributorNav() {
           <NavLink
             className={({ isActive }) => (isActive ? 'activated' : 'NavLink')}
             to="/contributor/about"
-            end
           >
             À Propos
           </NavLink>
         </li>
         <li className="NavItem Slide4">
-          <button className="NavLink" onClick={logout} end>
+          <button className="NavLink" onClick={logout}>
             Déconnexion
           </button>
         </li>
