@@ -3,12 +3,12 @@ import Axios from './caller.service'
 
 //inscription
 let signup = (SUcredentials) => {
-  return Axios.post('/api/auth/signup', SUcredentials)
+  return Axios.post('/api/signup', SUcredentials)
 }
 
 //Connection
 let login = (credentials) => {
-  return Axios.post('/api/auth/login', credentials)
+  return Axios.post('/api/login', credentials)
 }
 
 //Sauvegarde du token de session

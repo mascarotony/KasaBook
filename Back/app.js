@@ -52,7 +52,7 @@ app.use((req, res, next) => {
 app.use(express.json())
 
 //Routes
-app.use('/api/auth', userRoutes)
+app.use('/api', userRoutes)
 
 //Helmet secure
 app.use(

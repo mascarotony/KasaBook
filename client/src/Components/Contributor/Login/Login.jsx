@@ -30,7 +30,7 @@ function Login() {
       .login(credentials)
       .then((res) => {
         accountService.saveToken(res.data.token)
-        navigate('/contributor/logements')
+        navigate('/contributor/dashboard')
       })
       .catch((error) => console.log(error))
   }

@@ -1,1 +1,23 @@
-/*# sourceMappingURL=CDashboard.css.map */
+* {
+  font-family: "Montserrat";
+  background-color: #F6F6F6;
+  box-sizing: border-box;
+}
+* button {
+  padding: 0;
+}
+
+.CDashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 110px;
+}
+.CDashboard .Title {
+  text-align: center;
+  font-size: 3rem;
+  color: #75AB39;
+  text-shadow: 2px 2px 2px #D9D9D9;
+  margin-top: 40px;
+}/*# sourceMappingURL=CDashboard.css.map */

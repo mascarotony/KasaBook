@@ -13,8 +13,7 @@ function SignUp() {
   let navigate = useNavigate()
 
   const [SUcredentials, setSUcredentials] = useState({
-    firstname: '',
-    lastname: '',
+    pseudo: '',
     email: '',
     password: '',
   })
@@ -32,7 +31,7 @@ function SignUp() {
       .signup(SUcredentials)
       .then((res) => {
         accountService.saveToken(res.data.token)
-        navigate('/contributor/logements')
+        navigate('/contributor/dashboard')
       })
       .catch((error) => console.log(error))
   }
@@ -40,25 +39,13 @@ function SignUp() {
   return (
     <form name="SignUp" onSubmit={onSubmit} className="SignUpForm">
       <div className="InputBox">
-        <label htmlFor="firstname">Prénom</label>
+        <label htmlFor="pseudo">Pseudo</label>
         <input
           type="text"
-          name="firstname"
-          aria-label="prénom"
+          name="pseudo"
+          aria-label="Pseudo"
           required={true}
-          value={SUcredentials.firstname}
-          onChange={onChange}
-        />
-      </div>
-
-      <div className="InputBox">
-        <label htmlFor="lastname">Nom de famille</label>
-        <input
-          type="text"
-          name="lastname"
-          aria-label="Nom de famille"
-          required={true}
-          value={SUcredentials.lastname}
+          value={SUcredentials.pseudo}
           onChange={onChange}
         />
       </div>
