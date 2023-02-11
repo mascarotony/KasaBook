@@ -15,13 +15,11 @@ function CDashboard() {
           <button>Changer de photo de profil</button>
         </div>
         <div className="UserInfo">
-          <div className="UserDesc">
-            <p>*Pseudo*</p>
-            <p>*email*</p>
-            <p>*password*</p>
-            <p>*description*</p>
+          <div className="UserDesc"></div>
+          <div className="UserDescButton">
+            <button>Modifier mon profil</button>
+            <button>Supprimer mon profil</button>
           </div>
-          <button>Sauvegarder mes changements</button>
         </div>
       </div>
     </div>
