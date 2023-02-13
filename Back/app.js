@@ -13,6 +13,7 @@ const app = express()
 
 //Routes Utils
 const userRoutes = require('./routes/user')
+const logementRoutes = require('./routes/logement')
 
 //MongoDB database connect
 mongoose
@@ -52,7 +53,8 @@ app.use((req, res, next) => {
 app.use(express.json())
 
 //Routes
-app.use('/api', userRoutes)
+app.use('/api/user', userRoutes)
+app.use('/api/logement', logementRoutes)
 
 //Helmet secure
 app.use(
