@@ -24,12 +24,12 @@ exports.createLogement = async (req, res) => {
     }
 }
 
-//Contrôleur de crécupération de tout les logements
+//Contrôleur de récupération de tout les logements
 exports.getAllLogement = (req, res) => {
     Logement.find((err, docs) => {
         if (!err) res.send(docs)
         else console.log('Erreur de récupération des logements : ' + err)
-    })
+    }).sort({ createdAt: -1 })
 }
 
 //Contrôleur de récupération d'un seul logement
@@ -132,6 +132,85 @@ exports.unlikeLogement = async (req, res) => {
             req.body.id,
             {
                 $pull: { likes: req.params.id },
+            },
+            {
+                new: true,
+            }
+        )
+            .then((docs) => res.send(docs))
+            .catch((err) => res.status(400).send(err))
+    } catch (err) {
+        return res.status(400).send(err)
+    }
+}
+
+//Contrôleur de création d'un commentaire
+exports.commentLog = (req, res) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send('ID unknown: ' + req.params.id)
+
+    try {
+        return Logement.findByIdAndUpdate(
+            req.params.id,
+            {
+                $push: {
+                    comments: {
+                        commentId: req.body.commentId,
+                        commentPseudo: req.body.commentPseudo,
+                        commentText: req.body.commentText,
+                        timestamp: new Date().getTime(),
+                    },
+                },
+            },
+            {
+                new: true,
+            }
+        )
+            .then((docs) => res.send(docs))
+            .catch((err) => res.status(400).send(err))
+    } catch (err) {
+        return res.status(400).send(err)
+    }
+}
+
+//Contrôleur de modification d'un commentaire
+exports.editCommentLog = (req, res) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send('ID unknown: ' + req.params.id)
+
+    try {
+        return Logement.findById(req.params.id, (err, docs) => {
+            const theComment = docs.comments.find((comment) =>
+                comment._id.equals(req.body.commentId)
+            )
+
+            if (!theComment) return res.status(404).send('Comment Not Found')
+            theComment.commentText = req.body.commentText
+
+            return docs.save((err) => {
+                if (!err) return res.status(200).send(docs)
+                return res.status(500).send(err)
+            })
+        })
+    } catch (err) {
+        return res.status(400).send(err)
+    }
+}
+
+//Contrôleur de suppression d'un commentaire
+exports.deleteCommentLog = (req, res) => {
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).send('ID unknown: ' + req.params.id)
+
+    try {
+        return Logement.findByIdAndUpdate(
+            req.params.id,
+            {
+                $pull: {
+                    comments: {
+                        _id: req.body.commentId,
+                    },
+                },
             },
             {
                 new: true,
