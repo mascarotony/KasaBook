@@ -1,12 +1,14 @@
 //Constantes Utiles
 const express = require('express')
 const router = express.Router()
+const multer = require('multer')
+const upload = multer()
 
 //Constante pour le contrôleur
 const logementCtrl = require('../controllers/logement.js')
 
 //Création des routes de l'API
-router.post('/', logementCtrl.createLogement) //1 -> Création Logement
+router.post('/', upload.single('file'), logementCtrl.createLogement) //1 -> Création Logement
 router.get('/', logementCtrl.getAllLogement) //2 -> Récupération Logements
 router.get('/:id', logementCtrl.getOneLogement) //3 -> Récupération Logement
 router.put('/:id', logementCtrl.updateLogement) //4 -> Mise à jour Logement

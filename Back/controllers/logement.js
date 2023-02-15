@@ -2,9 +2,27 @@
 const Logement = require('../models/logement')
 const User = require('../models/user')
 const ObjectId = require('mongoose').Types.ObjectId
+const { uploadErrors } = require('../utils/errors')
+const fs = require('fs')
 
 //Contrôleur de création
 exports.createLogement = async (req, res) => {
+    let fileName
+
+    if (req.file !== null) {
+        try {
+            if (req.file.size > 500000) throw Error('Max size limit')
+        } catch (err) {
+            const errors = uploadErrors(err)
+            return res.status(201).json({ errors })
+        }
+
+        const fileName = req.body.userId + Date.now() + '.jpg'
+
+        await (req.file.stream,
+        fs.createWriteStream(`../client/public/uploads/logements/${fileName}`))
+    }
+
     const newLogement = new Logement({
         userId: req.body.userId,
         title: req.body.title,
@@ -12,6 +30,7 @@ exports.createLogement = async (req, res) => {
         location: req.body.location,
         equipments: req.body.equipments,
         tags: req.body.tags,
+        cover: req.file !== null ? './uploads/logements/' + fileName : '',
         likers: [],
         comments: [],
     })
